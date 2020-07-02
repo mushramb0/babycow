@@ -1,0 +1,35 @@
+{
+    "name": "小水牛",
+    "version": "1.0.0",
+    "description": "我是一只小水牛",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup/index.html",
+        "default_title": "小水牛"
+    },
+    "background": {
+        "scripts": [
+            "bg/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.baidu.com/*"
+            ],
+            "js": [
+                "js/baidu.js"
+            ],
+            "css": [],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "storage",
+        "cookies",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
